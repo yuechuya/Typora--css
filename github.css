@@ -1,0 +1,492 @@
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('./github/open-sans-v17-latin-ext_latin-regular.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: normal;
+    src: local('Open Sans Italic'), local('OpenSans-Italic'), url('./github/open-sans-v17-latin-ext_latin-italic.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('./github/open-sans-v17-latin-ext_latin-700.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: bold;
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('./github/open-sans-v17-latin-ext_latin-700italic.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ====== 全局 Body 样式 ====== */
+body {
+    background-color: #fdfdfd;
+    /* background-image: url('https://gcore.jsdelivr.net/gh/yuechuya/Pictures2@main/202607071933874.png'); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: '楷体', 'KaiTi', 'STKaiti', 'Open Sans', 'Clear Sans', 'Helvetica Neue', Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* ====== 编辑器主区域 ====== */
+#write {
+    max-width: 1400px !important;
+    margin: 0 auto;
+    padding: 30px 40px;
+    padding-bottom: 100px;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+        url('https://gcore.jsdelivr.net/gh/yuechuya/Pictures2@main/202607071933874.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1400px !important;
+    }
+}
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1400px !important;
+    }
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+    margin-top: 30px;
+}
+
+/* ====== 链接 ====== */
+a {
+    color: #4183C4;
+    color: #3498db;
+    text-decoration: none;
+    border-bottom: 1px dashed #3498db;
+    transition: all 0.2s ease;
+}
+a:hover {
+    color: #e74c3c;
+    border-bottom-color: #e74c3c;
+}
+
+/* ====== 标题 ====== */
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor,
+h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code,
+h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+    font-size: inherit;
+}
+
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px double #3498db;
+    padding-bottom: 6px;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    font-size: 1.8em;
+    color: #2c3e50;
+    border-left: 6px solid #e74c3c;
+    padding-left: 12px;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+    font-size: 1.4em;
+    font-weight: bold;
+    font-style: italic;
+    color: #8e44ad;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+    font-size: 1em;
+    color: #777;
+}
+
+/* ====== 段落 & 块级元素 ====== */
+p, blockquote, ul, ol, dl, table {
+    margin: 0.8em 0;
+}
+li > ol, li > ul {
+    margin: 0 0;
+}
+li p.first {
+    display: inline-block;
+}
+
+/* ====== 列表 ====== */
+ul, ol {
+    padding-left: 30px;
+}
+ul:first-child, ol:first-child {
+    margin-top: 0;
+}
+ul:last-child, ol:last-child {
+    margin-bottom: 0;
+}
+ul {
+    list-style-type: circle;
+    padding-left: 1.8em;
+}
+ul li {
+    margin-bottom: 4px;
+}
+ol {
+    list-style-type: decimal;
+    padding-left: 1.8em;
+}
+ol li::marker {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+/* ====== 引用块 ====== */
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+    border-left: 6px solid #1abc9c;
+    background-color: #f0f8f8;
+    padding: 12px 20px;
+    border-radius: 0 8px 8px 0;
+    color: #2c3e50;
+    font-style: italic;
+    margin: 1.5em 0;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+
+/* ====== 水平分割线 ====== */
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+/* ====== 表格 ====== */
+table {
+    padding: 0;
+    word-break: initial;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n), thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    padding: 10px 12px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ecf0f1;
+}
+table th:first-child, table td:first-child {
+    margin-top: 0;
+}
+table th:last-child, table td:last-child {
+    margin-bottom: 0;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #eaf2f8;
+}
+
+/* ====== 代码块 ====== */
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0, 28, 36, 0.3);
+    border-top: 1px solid #eef2f2;
+}
+.md-fences {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+    padding-top: 30px;
+    font-family: 'Menlo', 'Consolas', monospace;
+    position: relative;
+}
+.md-fences::before {
+    background: #fc625d;
+    border-radius: 50%;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    content: ' ';
+    height: 12px;
+    left: 12px;
+    margin-top: -20px;
+    position: absolute;
+    width: 12px;
+    z-index: 2;
+}
+code, tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+    background-color: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Menlo', 'Consolas', monospace;
+    font-size: 0.9em;
+    color: #c0392b;
+    border: 1px solid #e0e0e0;
+}
+
+/* ====== 任务列表 ====== */
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+.task-list-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #27ae60;
+    margin-right: 6px;
+    cursor: pointer;
+}
+.task-list-item {
+    list-style: none;
+    margin-left: -20px;
+}
+
+/* ====== 打印 ====== */
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+/* ====== 元数据块 ====== */
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+/* ====== 数学公式 ====== */
+.mathjax-block > .code-tooltip {
+    bottom: .375rem;
+}
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+/* ====== 聚焦模式 ====== */
+#write > h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+#write > h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write > h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write > h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+/* ====== 图片 ====== */
+.md-image > .md-meta {
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+img {
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+    max-width: 100%;
+    display: block;
+    margin: 1.2em auto;
+}
+
+/* ====== 标签/目录 ====== */
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.md-lang {
+    color: #b4654d;
+}
+
+/* ====== 侧边栏 ====== */
+.sidebar-tabs {
+    border-bottom: none;
+}
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+/* ====== 快速打开 ====== */
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/* ====== 聚焦模式 ====== */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+/* ====== 菜单 & 页脚 ====== */
+header, .context-menu, .megamenu-content, footer {
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* ====== 通知 & 下拉菜单 ====== */
+#md-notification .btn {
+    border: 0;
+}
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+/* ====== 偏好设置 ====== */
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0));
+}
+
+/* ====== 滚动条 ====== */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #c1c7cd;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a6ab;
+}
